@@ -1,0 +1,40 @@
+generated: '2026-10-22'
+method: derived
+generator: derive-vocabulary.py
+source: openapi/_ae-authored/ipkit-dev-openapi-generated.yml
+vocabulary:
+  name: IPKit Domain Vocabulary
+  description: 'Terms declared by IPKit''s own API contract: its resource groups, objects and enumerations, with the contract''s definitions.
+    Derived, not authored.'
+  version: '2026-10-22'
+  terms:
+  - term: Get2001486048608888Response
+    definition: 'Object declared by the contract with fields: schema, ip, type, source, location, network, security.'
+    tags:
+    - Object
+    source: openapi/_ae-authored/ipkit-dev-openapi-generated.yml#/components/schemas/Get2001486048608888Response
+  - term: Get8888Response
+    definition: 'Object declared by the contract with fields: schema, ip, type, source, location, network, security.'
+    tags:
+    - Object
+    source: openapi/_ae-authored/ipkit-dev-openapi-generated.yml#/components/schemas/Get8888Response
+  - term: GetApiMyIpResponse
+    definition: 'Object declared by the contract with fields: schema, ip, type, source, location, network, security.'
+    tags:
+    - Object
+    source: openapi/_ae-authored/ipkit-dev-openapi-generated.yml#/components/schemas/GetApiMyIpResponse
+  - term: 2001 4860 4860 8888
+    definition: 'Resource group in the contract; its operation GET /2001:4860:4860::8888: Look up a specific public IPv4 or IPv6 address.'
+    tags:
+    - Resource Group
+    source: openapi/_ae-authored/ipkit-dev-openapi-generated.yml
+  - term: '8'
+    definition: 'Resource group in the contract; its operation GET /8.8.8.8: Look up a specific public IPv4 or IPv6 address.'
+    tags:
+    - Resource Group
+    source: openapi/_ae-authored/ipkit-dev-openapi-generated.yml
+  - term: Api
+    definition: 'Resource group in the contract; its operation GET /api/my-ip: Current public IP, always JSON.'
+    tags:
+    - Resource Group
+    source: openapi/_ae-authored/ipkit-dev-openapi-generated.yml

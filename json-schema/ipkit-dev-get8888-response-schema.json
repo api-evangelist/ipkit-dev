@@ -1,0 +1,40 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/ipkit-dev/main/json-schema/ipkit-dev-get8888-response-schema.json",
+  "title": "Get8888Response",
+  "x-generated": "2026-10-22",
+  "x-method": "derived",
+  "x-generator": "derive-json-schema.py",
+  "x-source": "openapi/_ae-authored/ipkit-dev-openapi-generated.yml#/components/schemas/Get8888Response",
+  "type": "object",
+  "properties": {
+    "schema": {
+      "type": "string",
+      "description": "Always \"ipkit.v1\" so clients can detect breaking changes."
+    },
+    "ip": {
+      "type": "string",
+      "description": "The public address that was detected (current connection) or requested (lookup)."
+    },
+    "type": {
+      "type": "string",
+      "description": "\"IPv4\" or \"IPv6\"."
+    },
+    "source": {
+      "type": "string",
+      "description": "\"ipregistry\" when the configured intelligence provider succeeded; \"cloudflare\" when the record is built from Cloudflare edge metadata only."
+    },
+    "location": {
+      "type": "object",
+      "description": "Geolocation fields (continent, country, countryCode, region, regionCode, city, postalCode, latitude, longitude, timezone)."
+    },
+    "network": {
+      "type": "object",
+      "description": "Network fields (asn, organization, domain, route, usage, carrier)."
+    },
+    "security": {
+      "type": "object",
+      "description": "Security flags (proxy, vpn, tor, relay, cloud, threat, risk)."
+    }
+  }
+}

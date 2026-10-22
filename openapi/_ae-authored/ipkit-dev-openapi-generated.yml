@@ -1,0 +1,156 @@
+openapi: 3.1.0
+info:
+  title: IPKit API
+  version: '2026-10-22'
+  description: 'GENERATED FROM DOCUMENTATION by API Evangelist on 2026-10-22: 3 operation(s) read from 7 public documentation page(s) (each operation
+    names its page in x-source). This is not the provider''s published contract; IPKit has published no machine-readable contract that the pipeline
+    could find. Engine: local.'
+  x-evidence-tiers:
+    code-example: 0
+    documentation: 3
+    pages-with-code: 7
+    pages-read: 7
+  x-generated-from: documentation
+  x-provenance: generated
+  x-authored-by: API Evangelist
+  x-generated: '2026-10-22'
+  x-generator: generate-contract-from-docs.py
+  x-engine: local
+  x-sources:
+  - https://ipkit.dev/docs
+  - https://ipkit.dev/de/docs
+  - https://ipkit.dev/es/docs
+  - https://ipkit.dev/fr/docs
+  - https://ipkit.dev/ja/docs
+  - https://ipkit.dev/ko/docs
+  - https://ipkit.dev/pt/docs
+paths:
+  /2001:4860:4860::8888:
+    get:
+      operationId: get_2001_4860_4860_8888
+      tags:
+      - 2001 4860 4860 8888
+      summary: Look up a specific public IPv4 or IPv6 address.
+      x-source: https://ipkit.dev/docs
+      responses:
+        '200':
+          description: Success (status as documented)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Get2001486048608888Response'
+      x-evidence:
+        kind: documentation
+  /8.8.8.8:
+    get:
+      operationId: get_8_8_8_8
+      tags:
+      - '8'
+      summary: Look up a specific public IPv4 or IPv6 address.
+      x-source: https://ipkit.dev/docs
+      responses:
+        '200':
+          description: Success (status as documented)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Get8888Response'
+      x-evidence:
+        kind: documentation
+  /api/my-ip:
+    get:
+      operationId: get_api_my_ip
+      tags:
+      - Api
+      summary: Current public IP, always JSON.
+      x-source: https://ipkit.dev/docs
+      responses:
+        '200':
+          description: Success (status as documented)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/GetApiMyIpResponse'
+      x-evidence:
+        kind: documentation
+components:
+  schemas:
+    Get2001486048608888Response:
+      type: object
+      properties:
+        schema:
+          type: string
+          description: Always "ipkit.v1" so clients can detect breaking changes.
+        ip:
+          type: string
+          description: The public address that was detected (current connection) or requested (lookup).
+        type:
+          type: string
+          description: '"IPv4" or "IPv6".'
+        source:
+          type: string
+          description: '"ipregistry" when the configured intelligence provider succeeded; "cloudflare" when the record is built from Cloudflare
+            edge metadata only.'
+        location:
+          type: object
+          description: Geolocation fields (continent, country, countryCode, region, regionCode, city, postalCode, latitude, longitude, timezone).
+        network:
+          type: object
+          description: Network fields (asn, organization, domain, route, usage, carrier).
+        security:
+          type: object
+          description: Security flags (proxy, vpn, tor, relay, cloud, threat, risk).
+    Get8888Response:
+      type: object
+      properties:
+        schema:
+          type: string
+          description: Always "ipkit.v1" so clients can detect breaking changes.
+        ip:
+          type: string
+          description: The public address that was detected (current connection) or requested (lookup).
+        type:
+          type: string
+          description: '"IPv4" or "IPv6".'
+        source:
+          type: string
+          description: '"ipregistry" when the configured intelligence provider succeeded; "cloudflare" when the record is built from Cloudflare
+            edge metadata only.'
+        location:
+          type: object
+          description: Geolocation fields (continent, country, countryCode, region, regionCode, city, postalCode, latitude, longitude, timezone).
+        network:
+          type: object
+          description: Network fields (asn, organization, domain, route, usage, carrier).
+        security:
+          type: object
+          description: Security flags (proxy, vpn, tor, relay, cloud, threat, risk).
+    GetApiMyIpResponse:
+      type: object
+      properties:
+        schema:
+          type: string
+          description: Always "ipkit.v1" so clients can detect breaking changes.
+        ip:
+          type: string
+          description: The public address that was detected (current connection) or requested (lookup).
+        type:
+          type: string
+          description: '"IPv4" or "IPv6".'
+        source:
+          type: string
+          description: '"ipregistry" when the configured intelligence provider succeeded; "cloudflare" when the record is built from Cloudflare
+            edge metadata only.'
+        location:
+          type: object
+          description: Geolocation fields (continent, country, countryCode, region, regionCode, city, postalCode, latitude, longitude, timezone).
+        network:
+          type: object
+          description: Network fields (asn, organization, domain, route, usage, carrier).
+        security:
+          type: object
+          description: Security flags (proxy, vpn, tor, relay, cloud, threat, risk).
+tags:
+- name: 2001 4860 4860 8888
+- name: '8'
+- name: Api
